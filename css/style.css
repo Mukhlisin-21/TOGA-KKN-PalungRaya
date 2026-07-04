@@ -108,27 +108,35 @@ input:focus-visible{
 }
 
 .lembaga-inner{
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: center;
-  gap: 18px;
+  gap: 15px;
   text-align: center;
 }
 
 .lembaga-inner img{
-    width:80px;
-    height:80px;
-    border-radius:50%;
-    object-fit:cover;
-    background:#fff;
-    padding:2px;
-    border:2px solid #fff;
-    box-shadow:0 5px 5px rgba(0,0,0,.15);
+  width: 60px;
+  height: 60px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  background: var(--putih);
+  padding: 2px;
+  border: 2px solid var(--putih);
+  box-shadow: 0 4px 10px rgba(0,0,0,.18);
+  justify-self: start;
+}
+
+.lembaga-inner img:last-child{
+  justify-self: end;
 }
 
 .lembaga-text{
   color: var(--putih);
   line-height: 1.35;
+  min-width: 0;
 }
 
 .lembaga-text .eyebrow{
@@ -505,11 +513,13 @@ footer{
 }
 
 .footer-logo{
+  width: 64px;
   height: 64px;
-  width: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   background: var(--putih);
   padding: 6px;
-  border-radius: 10px;
+  border-radius: 50%;
 }
 
 .footer-text h3{
@@ -818,7 +828,8 @@ footer small{
   }
 
   .lembaga-inner img{
-    height: 38px;
+    width: 52px;
+    height: 52px;
   }
 }
 
@@ -826,8 +837,9 @@ footer small{
    RESPONSIVE — HP
 =================================================== */
 @media (max-width: 768px){
-  .lembaga-inner{
-    flex-wrap: wrap;
+  .lembaga-inner img{
+    width: 44px;
+    height: 44px;
   }
 
   .lembaga-text strong{
